@@ -1,0 +1,60 @@
+body {
+    background-color: #ffe4e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden; /* Prevents scrollbars from hearts */
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    z-index: 10; /* Keeps the buttons above the hearts */
+}
+
+h1 { color: #d02050; }
+
+#main-gif { width: 200px; margin-bottom: 20px; }
+
+.buttons { margin-top: 20px; position: relative; min-height: 60px; }
+
+button {
+    padding: 10px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#yesButton { background-color: #ff4d6d; color: white; margin-right: 10px; }
+
+#noButton {
+    background-color: #808080;
+    color: white;
+    position: absolute;
+}
+
+.hidden { display: none; }
+
+/* --- Falling Hearts Styling --- */
+.heart {
+    position: absolute;
+    top: -10px;
+    color: #ff4d6d;
+    font-size: 20px;
+    user-select: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(105vh) translateX(20px);
+    }
+}
