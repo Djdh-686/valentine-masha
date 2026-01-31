@@ -22,17 +22,7 @@ function moveButton() {
     noButton.style.top = `${y}px`;
 }
 
-function celebrate() {
-    document.getElementById('proposal-section').classList.add('hidden');
-    document.getElementById('success-section').classList.remove('hidden');
 
-    if (player && player.playVideo) {
-        player.setVolume(100); // Ensures volume is up
-        player.playVideo();
-    }
-
-    setInterval(createHeart, 300);
-}
 
 
 function createHeart() {
@@ -41,7 +31,21 @@ function createHeart() {
     heart.innerHTML = '❤️';
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.animationDuration = Math.random() * 2 + 3 + "s";
-    document.getElementById('heart-container').appendChild(heart);
+    document.getElementById('heart-cofunction celebrate() {
+    // 1. Switch the screens
+    document.getElementById('proposal-section').classList.add('hidden');
+    document.getElementById('success-section').classList.remove('hidden');
+
+    // 2. Play the song via YouTube API
+    if (player && player.playVideo) {
+        player.unMute(); // <--- ADD THIS
+        player.setVolume(100); 
+        player.playVideo();
+    }
+
+    // 3. Start the heart rain
+    setInterval(createHeart, 300);
+}appendChild(heart);
     
     setTimeout(() => {
         heart.remove();
